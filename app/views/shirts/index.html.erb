@@ -4,7 +4,11 @@
   <li>
   <p><%= pic.color.capitalize %> shirt from <%= pic.retailer %></p>
   <p><img width ="300" img src="<%= pic.picture %>"</p>
-  <p><a href="http://localhost:3000/shirts/<%=pic.id%>/delete">Delete</a>
+
+<% link_to "Delete", "http://localhost:3000/shirts/#{pic.id}", :method=> :delete %>
+  <!-- <p><a href="http://localhost:3000/shirts/<%=pic.id%>/delete">Delete</a> -->
+
+
   <p><a href="http://localhost:3000/shirts/<%=pic.id%>/edit">Edit</a>
   </li>
   <% end %>

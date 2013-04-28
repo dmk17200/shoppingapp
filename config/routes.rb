@@ -1,16 +1,15 @@
 Shoppingapp::Application.routes.draw do
-
+#create
+  get "/shirts/add", :controller=>"Shirts", :action=>"new"
+  post "/shirts", :controller=>"Shirts", :action=>"create"
 #read
   get "/shirts", :controller=>"Shirts", :action=>"index"
-  get "/shirts/:number", :controller=>"Shirts", :action=>"one_shirt"
-#create
-  get "/add", :controller=>"Shirts", :action=>"add_form"
-  get "/add_to_shirts", :controller=>"Shirts", :action=>"added_to_shirts"
+  get "/shirts/:id", :controller=>"Shirts", :action=>"show"
 #update
-  get "/shirts/:id/edit", :controller=>"Shirts", :action=>"edit_form"
-  get "/edit_shirt/:id", :controller=>"Shirts", :action=>"edited_shirt"
+  get "/shirts/:id/edit", :controller=>"Shirts", :action=>"edit"
+  put "/shirts/:id", :controller=>"Shirts", :action=>"update"
 #delete
-  get "/shirts/:id/delete", :controller=>"Shirts", :action=>"delete_shirt"
+  delete "/shirts/:id", :controller=>"Shirts", :action=>"destroy"
 
 
 end

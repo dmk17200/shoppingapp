@@ -1,0 +1,19 @@
+<h1>Edit this </h1>
+<!-- <p><img width="300" img src="<%=@edit.picture%>"></p> -->
+
+<%= form_tag( "/shirts/#{@edit.id}", :method => :put) do %>
+  Retailer: <input type="text" name="retailer" value="<%=@edit.retailer%>">
+  Color: <input type="text" name="color" value="<%=@edit.color%>">
+  Picture URL: <input type="text" name="picture" value="<%=@edit.picture%>">
+  <input type="submit" name="submit">
+<%end%>
+
+
+
+<!-- <form action ="/shirts/<%=@edit.id%>" method="put">
+  Retailer: <input type="text" name="retailer" value="<%=@edit.retailer%>">
+  Color: <input type="text" name="color" value="<%=@edit.color%>">
+  Picture URL: <input type="text" name="picture" value="<%=@edit.picture%>">
+  <input type="submit" name="submit">
+</form>
+ -->

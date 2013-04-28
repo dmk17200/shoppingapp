@@ -3,13 +3,13 @@ class ShirtsController<ApplicationController
     @list=Shirt.all
   end
 
-  def one_shirt
-    @one_shirt=Shirt.find_by_id(params["number"])
+  def show
+    @show=Shirt.find_by_id(params["id"])
   end
 
-  def add_form
+  def new
   end
-  def added_to_shirts
+  def create
     s=Shirt.new
     s.retailer = params["retailer"]
     s.color = params["color"]
@@ -19,10 +19,10 @@ class ShirtsController<ApplicationController
     redirect_to "/shirts"
   end
 
-  def edit_form
-    @s=Shirt.find_by_id(params["id"])
+  def edit
+    @edit=Shirt.find_by_id(params["id"])
   end
-  def edited_shirt
+  def update
     s=Shirt.find_by_id(params["id"])
     s.retailer = params["retailer"]
     s.color = params["color"]
@@ -31,7 +31,7 @@ class ShirtsController<ApplicationController
 
     redirect_to "/shirts"
   end
-  def delete_shirt
+  def destroy
     s=Shirt.find_by_id(params["id"])
     s.destroy
     redirect_to "/shirts"
