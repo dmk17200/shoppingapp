@@ -1,0 +1,9 @@
+<h1>Edit this <%=@s.color%> shirt from <%=@s.retailer%></h1>
+<p><img width="300" img src="<%=@s.picture%>"></p>
+
+<form action ="/edit_shirt/<%=@s.id%>" method="get">
+  Retailer: <input type="text" name="retailer" value="<%=@s.retailer%>">
+  Color: <input type="text" name="color" value="<%=@s.color%>">
+  Picture URL: <input type="text" name="picture" value="<%=@s.picture%>">
+  <input type="submit" name="submit">
+</form>

@@ -1,0 +1,13 @@
+<h1> See All Shirts <h1>
+  <ul>
+  <% @list.each do |pic| %>
+  <li>
+  <p><%= pic.color.capitalize %> shirt from <%= pic.retailer %></p>
+  <p><img width ="300" img src="<%= pic.picture %>"</p>
+  <p><a href="http://localhost:3000/shirts/<%=pic.id%>/delete">Delete</a>
+  <p><a href="http://localhost:3000/shirts/<%=pic.id%>/edit">Edit</a>
+  </li>
+  <% end %>
+</ul>
+
+
