@@ -16,7 +16,7 @@ class ShirtsController<ApplicationController
     s.picture = params["picture"]
     s.save
 
-    redirect_to "/shirts"
+    redirect_to shirts_url
   end
 
   def edit
@@ -29,12 +29,12 @@ class ShirtsController<ApplicationController
     s.picture = params["picture"]
     s.save
 
-    redirect_to "/shirts"
+    redirect_to shirts_url
   end
   def destroy
     s=Shirt.find_by_id(params["id"])
     s.destroy
-    redirect_to "/shirts"
+    redirect_to shirts_url
   end
 
 end

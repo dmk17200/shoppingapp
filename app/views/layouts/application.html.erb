@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<nav>
+  <%= link_to "Home", shirts_url %>
+  <%= link_to "Add New Shirt", new_shirts_url %>
+</nav>
   <title>Shoppingapp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>

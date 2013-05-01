@@ -2,10 +2,16 @@
 <!-- <p><img width="300" img src="<%=@edit.picture%>"></p> -->
 
 <%= form_tag( "/shirts/#{@edit.id}", :method => :put) do %>
-  Retailer: <input type="text" name="retailer" value="<%=@edit.retailer%>">
-  Color: <input type="text" name="color" value="<%=@edit.color%>">
-  Picture URL: <input type="text" name="picture" value="<%=@edit.picture%>">
-  <input type="submit" name="submit">
+  <%= label_tag :source,"Retailer" %>
+  <%= text_field_tag :source, @edit.retailer %>
+
+  <%= label_tag :source,"Color" %>
+  <%= text_field_tag :source, @edit.color %>
+
+  <%= label_tag :source,"Picture URL" %>
+  <%= text_field_tag :source, @edit.picture %>
+
+  <%= submit_tag "Update Picture" %>
 <%end%>
 
 

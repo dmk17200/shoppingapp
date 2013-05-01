@@ -1,7 +1,15 @@
 <h1> Add a New Shirt </h1>
-<form action ="/shirts" method="post">
-  Retailer: <input type="text" name="retailer">
-  Color: <input type="text" name="color">
-  Picture URL: <input type="text" name="picture">
-  <input type="submit" name="submit">
-</form>
+<%= link_to "Back", shirts_url %>
+
+<%= form_tag("/shirts", :method=>:post) do %>
+  <%= label_tag :source,"Retailer" %>
+  <%= text_field_tag :source %>
+
+  <%= label_tag :source,"Color" %>
+  <%= text_field_tag :source %>
+
+  <%= label_tag :source,"Picture URL" %>
+  <%= text_field_tag :source %>
+
+  <submit_tag "Add a New Shirt">
+<% end %>

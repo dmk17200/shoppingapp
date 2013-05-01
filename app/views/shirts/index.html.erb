@@ -2,14 +2,16 @@
   <ul>
   <% @list.each do |pic| %>
   <li>
-  <p><%= pic.color.capitalize %> shirt from <%= pic.retailer %></p>
-  <p><img width ="300" img src="<%= pic.picture %>"</p>
+  <%= pic.color.capitalize %> shirt from <%= pic.retailer %></p>
+  <!-- <p><img width ="300" img src="<%= pic.picture %>"</p> -->
+  <p><%= image_tag pic.picture, :width=>200 %></p>
 
-<% link_to "Delete", "http://localhost:3000/shirts/#{pic.id}", :method=> :delete %>
+
+<%= link_to "Delete", shirt_url(pic.id), :method=> :delete %>
   <!-- <p><a href="http://localhost:3000/shirts/<%=pic.id%>/delete">Delete</a> -->
 
 
-  <p><a href="http://localhost:3000/shirts/<%=pic.id%>/edit">Edit</a>
+  <p><%= link_to "Edit", edit_shirt_url(pic.id)  %> </p>
   </li>
   <% end %>
 </ul>
